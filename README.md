@@ -7,7 +7,7 @@ TribePeer is used only as an API. This app stores quizzes in a local SQLite file
 ## Requirements
 
 - PHP 8.2 and Composer, with the SQLite extension
-- `pdftotext` (Poppler). On a Mac: `brew install poppler`
+- Poppler (`pdftotext`) is optional. The app can read PDFs in PHP if the server does not have it.
 - TribePeer partner keys, and this app’s URL on the publishable key’s allowed origins
 
 ## Run
