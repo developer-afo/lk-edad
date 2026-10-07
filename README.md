@@ -2,11 +2,11 @@
 
 Prototype: sign in with TribePeer, upload a PDF, answer a short quiz, then see topic strengths (for example Community 50%, Policy 20%).
 
-TribePeer is used only as an API. This app has its own MySQL database.
+TribePeer is used only as an API. This app stores quizzes in a local SQLite file.
 
 ## Requirements
 
-- PHP 8.2, Composer, MySQL
+- PHP 8.2 and Composer, with the SQLite extension
 - `pdftotext` (Poppler). On a Mac: `brew install poppler`
 - TribePeer partner keys, and this app’s URL on the publishable key’s allowed origins
 
@@ -21,7 +21,7 @@ Set `TRIBEPEER_CLIENT_ID`, `TRIBEPEER_CLIENT_SECRET`, and `TRIBEPEER_PUBLISHABLE
 `TRIBEPEER_ORIGIN` must match `APP_URL` (default `http://127.0.0.1:8088`).
 
 ```bash
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS lk_edad CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+touch database/database.sqlite
 php artisan migrate
 php artisan serve --host=127.0.0.1 --port=8088
 ```
